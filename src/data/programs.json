@@ -1,0 +1,79 @@
+{
+  "3_gym": {
+    "model": "ABC",
+    "title": "3 ימים | חדר כושר מלא",
+    "days": {
+      "A": { "name": "חזה וכתפיים", "exercises": [
+        { "ex": "chest_press", "sets": 4, "reps": "10" },
+        { "ex": "incline_press", "sets": 3, "reps": "12" },
+        { "ex": "shoulder_press", "sets": 3, "reps": "12" }
+      ]},
+      "B": { "name": "גב ויד", "exercises": [
+        { "ex": "pullup", "sets": 4, "reps": "8" },
+        { "ex": "plank", "sets": 3, "reps": "45 שניות" }
+      ]},
+      "C": { "name": "רגליים", "exercises": [
+        { "ex": "squat", "sets": 4, "reps": "12" },
+        { "ex": "lunges", "sets": 3, "reps": "10 לכל רגל" }
+      ]}
+    }
+  },
+  "3_calisthenics": {
+    "model": "ABC",
+    "title": "3 ימים | מתקן קליסטניקס",
+    "days": {
+      "A": { "name": "דחיפה", "exercises": [
+        { "ex": "dips", "sets": 4, "reps": "10" },
+        { "ex": "pushup", "sets": 4, "reps": "15" }
+      ]},
+      "B": { "name": "משיכה", "exercises": [
+        { "ex": "pullup", "sets": 4, "reps": "מקסימום" },
+        { "ex": "leg_raise", "sets": 3, "reps": "12" }
+      ]},
+      "C": { "name": "רגליים וליבה", "exercises": [
+        { "ex": "squat", "sets": 4, "reps": "20" },
+        { "ex": "plank", "sets": 3, "reps": "60 שניות" }
+      ]}
+    }
+  },
+  "3_bodyweight": {
+    "model": "ABC",
+    "title": "3 ימים | משקל גוף בלבד",
+    "days": {
+      "A": { "name": "פלג גוף עליון", "exercises": [
+        { "ex": "pushup", "sets": 4, "reps": "15" },
+        { "ex": "plank", "sets": 3, "reps": "45 שניות" }
+      ]},
+      "B": { "name": "פלג גוף תחתון", "exercises": [
+        { "ex": "squat", "sets": 4, "reps": "20" },
+        { "ex": "lunges", "sets": 3, "reps": "12 לכל רגל" }
+      ]},
+      "C": { "name": "גוף מלא", "exercises": [
+        { "ex": "pushup", "sets": 3, "reps": "מקסימום" },
+        { "ex": "squat", "sets": 3, "reps": "מקסימום" },
+        { "ex": "plank", "sets": 3, "reps": "60 שניות" }
+      ]}
+    }
+  },
+  "4_gym": {
+    "model": "ABCD",
+    "title": "4 ימים | חדר כושר מלא",
+    "days": {
+      "A": { "name": "חזה", "exercises": [
+        { "ex": "chest_press", "sets": 4, "reps": "10" },
+        { "ex": "incline_press", "sets": 4, "reps": "12" }
+      ]},
+      "B": { "name": "גב", "exercises": [
+        { "ex": "pullup", "sets": 4, "reps": "8" }
+      ]},
+      "C": { "name": "רגליים", "exercises": [
+        { "ex": "squat", "sets": 5, "reps": "10" },
+        { "ex": "lunges", "sets": 3, "reps": "12" }
+      ]},
+      "D": { "name": "כתפיים וליבה", "exercises": [
+        { "ex": "shoulder_press", "sets": 4, "reps": "12" },
+        { "ex": "plank", "sets": 4, "reps": "45 שניות" }
+      ]}
+    }
+  }
+}

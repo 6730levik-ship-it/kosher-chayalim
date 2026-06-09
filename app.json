@@ -1,25 +1,62 @@
 {
   "expo": {
-    "name": "fitnessil",
+    "name": "כושר בסיס",
     "slug": "fitnessil",
+    "scheme": "fitnessil",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "locales": {
+      "he": {
+        "CFBundleDisplayName": "כושר בסיס"
+      }
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fitnessil.app",
+      "usesAppleSignIn": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "האפליקציה משתמשת ב-GPS למדידת מרחק וקצב הריצה שלך."
+      }
     },
     "android": {
+      "package": "com.fitnessil.app",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ],
       "predictiveBackGestureEnabled": false
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "supportsRTL": true,
+      "googleWebClientId": "REPLACE_WEB_CLIENT_ID.apps.googleusercontent.com",
+      "googleIosClientId": "REPLACE_IOS_CLIENT_ID.apps.googleusercontent.com"
+    },
+    "plugins": [
+      "expo-web-browser",
+      "expo-apple-authentication",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "האפליקציה משתמשת ב-GPS למדידת מרחק וקצב הריצה שלך."
+        }
+      ],
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.REPLACE_IOS_CLIENT_ID"
+        }
+      ]
+    ]
   }
 }

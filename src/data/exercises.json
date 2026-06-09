@@ -1,0 +1,82 @@
+{
+  "chest_press": {
+    "name": "לחיצת חזה",
+    "muscle": "חזה",
+    "equipment": ["gym"],
+    "lottie": "chest_press.json",
+    "rest": 90,
+    "tips": ["שמור גב צמוד לספסל", "מרפקים בזווית 45 מעלות", "נשיפה בזמן הדחיפה"]
+  },
+  "incline_press": {
+    "name": "לחיצת חזה בשיפוע",
+    "muscle": "חזה עליון",
+    "equipment": ["gym"],
+    "lottie": "incline_press.json",
+    "rest": 90,
+    "tips": ["ספסל בזווית 30 מעלות", "הורד עד קו הבריח", "שמור שורש כף יד ישר"]
+  },
+  "pullup": {
+    "name": "עליות מתח",
+    "muscle": "גב רחב",
+    "equipment": ["calisthenics", "bodyweight"],
+    "lottie": "pullup.json",
+    "rest": 120,
+    "tips": ["אחיזה רחבה מהכתפיים", "משוך מרפקים כלפי מטה", "ירידה מבוקרת ואיטית"]
+  },
+  "dips": {
+    "name": "מקבילים",
+    "muscle": "חזה ויד אחורית",
+    "equipment": ["calisthenics", "bodyweight"],
+    "lottie": "dips.json",
+    "rest": 90,
+    "tips": ["הטה גוף קדימה לחזה", "מרפקים צמודים לגוף", "ירידה עד 90 מעלות"]
+  },
+  "pushup": {
+    "name": "שכיבות סמיכה",
+    "muscle": "חזה",
+    "equipment": ["bodyweight"],
+    "lottie": "pushup.json",
+    "rest": 60,
+    "tips": ["גוף ישר כמו קרש", "מרפקים אחורה לא לצדדים", "חזה כמעט נוגע ברצפה"]
+  },
+  "squat": {
+    "name": "סקוואט",
+    "muscle": "רגליים וישבן",
+    "equipment": ["gym", "bodyweight"],
+    "lottie": "squat.json",
+    "rest": 120,
+    "tips": ["גב ישר לאורך כל התנועה", "ברכיים בכיוון האצבעות", "ירידה עד מקביל לרצפה"]
+  },
+  "lunges": {
+    "name": "מספריים",
+    "muscle": "רגליים",
+    "equipment": ["bodyweight", "gym"],
+    "lottie": "lunges.json",
+    "rest": 75,
+    "tips": ["צעד גדול קדימה", "ברך אחורית כמעט נוגעת ברצפה", "שמור גו זקוף"]
+  },
+  "shoulder_press": {
+    "name": "לחיצת כתפיים",
+    "muscle": "כתפיים",
+    "equipment": ["gym"],
+    "lottie": "shoulder_press.json",
+    "rest": 90,
+    "tips": ["שמור ליבה אסופה", "אל תנעל מרפקים בקצה", "הורד עד גובה האוזניים"]
+  },
+  "plank": {
+    "name": "פלאנק",
+    "muscle": "בטן וליבה",
+    "equipment": ["bodyweight", "calisthenics", "gym"],
+    "lottie": "plank.json",
+    "rest": 45,
+    "tips": ["גוף בקו ישר", "כווץ בטן וישבן", "מבט לרצפה לצוואר ניטרלי"]
+  },
+  "leg_raise": {
+    "name": "הרמות רגליים בתלייה",
+    "muscle": "בטן תחתונה",
+    "equipment": ["calisthenics"],
+    "lottie": "leg_raise.json",
+    "rest": 60,
+    "tips": ["הימנע מנדנוד", "הרם עד 90 מעלות", "ירידה איטית בשליטה"]
+  }
+}
