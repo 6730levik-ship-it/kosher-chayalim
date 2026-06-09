@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { View, Text, Pressable, ScrollView, ActivityIndicator } from 'react-native';
-import LottieView from 'lottie-react-native';
+import { View, Text, Pressable, ScrollView } from 'react-native';
+import ExerciseClip from '../components/ExerciseClip';
 import exercises from '../data/exercises.json';
 import RestTimer from '../components/RestTimer';
-import { LOTTIE_CDN } from '../lib/supabase';
+import { CLIPS_CDN, IMG_CDN } from '../lib/supabase';
 import { S, C } from '../theme';
 import { T } from '../i18n/he';
 
@@ -20,20 +20,16 @@ export default function Workout({
   const current = plan[idx];
   const ex = (exercises as any)[current.ex];
 
-  const [anim, setAnim] = useState<any>(null);
   const [done, setDone] = useState<boolean[]>(Array(current.sets).fill(false));
   const [rest, setRest] = useState(false);
 
-  // משיכת Lottie On-Demand מהשרת — רק לתרגיל הנוכחי (חוסך נפח אחסון)
+  // הקליפ/תמונה נמשכים On-Demand מהשרת (לא נארזים ב-bundle, חוסך נפח אחסון)
+  const clipUrl = ex.clip ? CLIPS_CDN + ex.clip : null;
+  const imgUrl = ex.image ? IMG_CDN + ex.image : null;
+
+  // איפוס סימוני הסטים במעבר תרגיל
   useEffect(() => {
-    setAnim(null);
     setDone(Array(current.sets).fill(false));
-    let alive = true;
-    fetch(LOTTIE_CDN + ex.lottie)
-      .then((r) => r.json())
-      .then((j) => alive && setAnim(j))
-      .catch(() => {});
-    return () => { alive = false; };
   }, [idx]);
 
   const toggleSet = (i: number) => {
@@ -56,15 +52,11 @@ export default function Workout({
       <Text style={S.sub}>תרגיל {idx + 1} מתוך {plan.length}</Text>
       <Text style={S.h1}>{ex.name}</Text>
 
-      {/* חלונית אנימציה וקטורית בלופ */}
+      {/* קליפ וידאו קצר בלופ — הדגמת ביצוע התרגיל */}
       <View style={anBox}>
-        {anim ? (
-          <LottieView source={anim} autoPlay loop style={{ width: '100%', height: 220 }} />
-        ) : (
-          <ActivityIndicator size="large" color={C.accent} style={{ height: 220 }} />
-        )}
+        <ExerciseClip url={clipUrl} image={imgUrl} name={ex.name} />
         <View style={muscleTag}>
-          <Text style={muscleTxt}>🎯 {T.workout.activeMuscle}: {ex.muscle}</Text>
+          <Text style={muscleTxt}>{T.workout.activeMuscle}: {ex.muscle}</Text>
         </View>
       </View>
 

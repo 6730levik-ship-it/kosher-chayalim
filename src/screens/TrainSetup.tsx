@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, Pressable, ScrollView } from 'react-native';
+import { View, Text, Pressable, ScrollView, Platform } from 'react-native';
 import programs from '../data/programs.json';
 import Workout from './Workout';
 import { S, C } from '../theme';
@@ -9,9 +9,12 @@ type Equip = 'gym' | 'calisthenics' | 'bodyweight';
 
 // המשתמש בוחר ימים + ציוד -> נשלפת התוכנית הקשיחה המתאימה
 export default function TrainSetup() {
+  // web בלבד: ?day=A&equip=gym פותח ישר את מסך התרגיל (לתצוגה)
+  const qs = Platform.OS === 'web' && typeof window !== 'undefined'
+    ? new URLSearchParams(window.location.search) : null;
   const [days, setDays] = useState(3);
-  const [equip, setEquip] = useState<Equip>('bodyweight');
-  const [activeDay, setActiveDay] = useState<string | null>(null);
+  const [equip, setEquip] = useState<Equip>((qs?.get('equip') as Equip) || 'bodyweight');
+  const [activeDay, setActiveDay] = useState<string | null>(qs?.get('day') || null);
 
   const key = `${days}_${equip}`;
   const program = (programs as any)[key] ?? (programs as any)[`3_${equip}`];

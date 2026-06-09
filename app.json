@@ -35,7 +35,11 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "output": "single"
+    },
+    "experiments": {
+      "baseUrl": "/kosher-chayalim"
     },
     "extra": {
       "supportsRTL": true,
@@ -56,7 +60,8 @@
         {
           "iosUrlScheme": "com.googleusercontent.apps.REPLACE_IOS_CLIENT_ID"
         }
-      ]
+      ],
+      "expo-video"
     ]
   }
 }

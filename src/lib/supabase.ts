@@ -17,3 +17,11 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
 // בסיס למשיכת אנימציות Lottie On-Demand (לא נארז ב-bundle)
 export const LOTTIE_CDN =
   SUPABASE_URL + '/storage/v1/object/public/lottie/';
+
+// בסיס למשיכת קליפי וידאו קצרים (2-3 ש') לכל תרגיל — נמשכים On-Demand מהשרת
+export const CLIPS_CDN =
+  SUPABASE_URL + '/storage/v1/object/public/clips/';
+
+// בסיס למשיכת תמונות תרגיל (לתרגילים שאין להם וידאו) — נמשכות On-Demand
+export const IMG_CDN =
+  SUPABASE_URL + '/storage/v1/object/public/eximg/';

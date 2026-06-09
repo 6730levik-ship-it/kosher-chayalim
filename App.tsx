@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { View, Text, Pressable, I18nManager, StatusBar, SafeAreaView } from 'react-native';
+import { View, Text, Pressable, I18nManager, StatusBar, SafeAreaView, Platform } from 'react-native';
 import * as Linking from 'expo-linking';
 import { supabase } from './src/lib/supabase';
 import Onboarding from './src/screens/Onboarding';
@@ -10,6 +10,8 @@ import Profile from './src/screens/Profile';
 import JoinRun from './src/screens/JoinRun';
 import { C } from './src/theme';
 import { T } from './src/i18n/he';
+import Icon from './src/components/Icon';
+import CamoBackground from './src/components/CamoBackground';
 
 // כפיית RTL לכל האפליקציה
 if (!I18nManager.isRTL) {
@@ -29,8 +31,12 @@ function parseRunCode(url: string | null): string | null {
 export default function App() {
   const [session, setSession] = useState<any>(null);
   const [ready, setReady] = useState(false);
-  const [tab, setTab] = useState<Tab>('run');
+  // web בלבד: פרמטרים ל-URL לצורך תצוגה/דמו (?guest=1&tab=train)
+  const q = Platform.OS === 'web' && typeof window !== 'undefined'
+    ? new URLSearchParams(window.location.search) : null;
+  const [tab, setTab] = useState<Tab>((q?.get('tab') as Tab) || 'run');
   const [joinCode, setJoinCode] = useState<string | null>(null);
+  const [guest, setGuest] = useState(q?.get('guest') === '1'); // מצב תצוגה ללא התחברות
 
   // Auth
   useEffect(() => {
@@ -66,14 +72,16 @@ export default function App() {
   }, []);
 
   if (!ready) return <View style={{ flex: 1, backgroundColor: C.bg }} />;
-  if (!session) return <Onboarding />;
+  if (!session && !guest) return <Onboarding onGuest={() => setGuest(true)} />;
 
-  const user = session.user;
+  // משתמש אמיתי, או משתמש דמה במצב תצוגה (אורח)
+  const user = session?.user ?? { id: 'demo-guest', user_metadata: { name: 'אורח' } };
 
   // קישור ריצה גובר על הניווט הרגיל
   if (joinCode)
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: C.bg }}>
+        <CamoBackground />
         <StatusBar barStyle="dark-content" />
         <JoinRun code={joinCode} user={user} onClose={() => setJoinCode(null)} />
       </SafeAreaView>
@@ -81,6 +89,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: C.bg }}>
+      <CamoBackground />
       <StatusBar barStyle="dark-content" />
       <View style={{ flex: 1 }}>
         {tab === 'run' && <RunHub user={user} />}
@@ -89,18 +98,20 @@ export default function App() {
         {tab === 'me' && <Profile user={user} />}
       </View>
 
-      {/* ניווט תחתון בעברית */}
+      {/* ניווט תחתון — עיצוב טקטי נקי */}
       <View style={tabBar}>
-        {(['run', 'train', 'food', 'me'] as Tab[]).map((k) => (
-          <Pressable key={k} style={{ flex: 1, alignItems: 'center' }} onPress={() => setTab(k)}>
-            <Text style={{ fontSize: 22 }}>
-              {k === 'run' ? '🏃' : k === 'train' ? '🏋️' : k === 'food' ? '🍗' : '🎖️'}
-            </Text>
-            <Text style={{ fontSize: 12, fontWeight: '700', color: tab === k ? C.accent : C.sub }}>
-              {T.tabs[k]}
-            </Text>
-          </Pressable>
-        ))}
+        {(['run', 'train', 'food', 'me'] as Tab[]).map((k) => {
+          const active = tab === k;
+          return (
+            <Pressable key={k} style={{ flex: 1, alignItems: 'center', paddingTop: 6 }} onPress={() => setTab(k)}>
+              <View style={{ height: 3, width: 26, borderRadius: 2, marginBottom: 6, backgroundColor: active ? C.accent : 'transparent' }} />
+              <Icon name={k} color={active ? C.accent : C.sub} size={24} />
+              <Text style={{ fontSize: 12, fontWeight: '700', color: active ? C.accent : C.sub, marginTop: 3 }}>
+                {T.tabs[k]}
+              </Text>
+            </Pressable>
+          );
+        })}
       </View>
     </SafeAreaView>
   );

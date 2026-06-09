@@ -32,26 +32,53 @@ export default function RunHub({ user }: { user: any }) {
   );
 }
 
-/* ---------- מצב א: רץ לבד (GPS חומרה) ---------- */
+/* ---------- מצב א: רץ לבד (שעון GPS בדיוק גבוה) ---------- */
+// ספי סינון רעשי GPS — מונעים ניפוח מרחק
+const ACC_MAX_M = 25;   // פוסלים fix עם רדיוס אי-ודאות גדול מ-25 מ'
+const SPEED_MAX = 10;   // מ'/ש' (~36 קמ"ש) — מעל זה זו קפיצת GPS, לא ריצה
+
 function SoloRun({ user, onBack }: { user: any; onBack: () => void }) {
   const [running, setRunning] = useState(false);
   const [dist, setDist] = useState(0);
   const [sec, setSec] = useState(0);
+  const [acc, setAcc] = useState<number | null>(null); // דיוק GPS נוכחי (מ')
+  const [acquiring, setAcquiring] = useState(false);    // ממתין לאיתות ראשון תקין
   const sub = useRef<Location.LocationSubscription | null>(null);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
   const last = useRef<Location.LocationObjectCoords | null>(null);
+  const lastTs = useRef<number | null>(null);
 
   const start = async () => {
     const { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== 'granted') return;
     setRunning(true);
+    setDist(0);
+    setSec(0);
+    setAcquiring(true);
     last.current = null;
+    lastTs.current = null;
     timer.current = setInterval(() => setSec((s) => s + 1), 1000);
     sub.current = await Location.watchPositionAsync(
-      { accuracy: Location.Accuracy.High, distanceInterval: 5 },
-      ({ coords }) => {
-        if (last.current) setDist((d) => d + haversine(last.current!, coords));
-        last.current = coords;
+      {
+        accuracy: Location.Accuracy.BestForNavigation, // הדיוק הגבוה ביותר (חיישנים)
+        distanceInterval: 5,                            // עדכון כל 5 מטרים
+        timeInterval: 1000,                             // Android: לפחות פעם בשנייה
+      },
+      (loc) => {
+        const c = loc.coords;
+        setAcc(c.accuracy ?? null);
+        // פוסלים נקודות באיכות נמוכה — לא מעדכנים עוגן ולא צוברים
+        if (c.accuracy == null || c.accuracy > ACC_MAX_M) return;
+        if (last.current != null && lastTs.current != null) {
+          const stepKm = haversine(last.current, c);
+          const dt = (loc.timestamp - lastTs.current) / 1000;
+          const speed = dt > 0 ? (stepKm * 1000) / dt : 0;
+          if (speed > SPEED_MAX) return; // קפיצת GPS — מתעלמים, שומרים על העוגן הקודם
+          setDist((d) => d + stepKm);
+        }
+        last.current = c;
+        lastTs.current = loc.timestamp;
+        setAcquiring(false);
       }
     );
   };
@@ -60,6 +87,7 @@ function SoloRun({ user, onBack }: { user: any; onBack: () => void }) {
     sub.current?.remove();
     if (timer.current) clearInterval(timer.current);
     setRunning(false);
+    setAcquiring(false);
     const pace = dist > 0 ? fmtPace(sec / dist) : '-';
     // נשמר כטקסט קל בלבד בענן (פרופיל אישי)
     await supabase.from('runs').insert({
@@ -71,6 +99,14 @@ function SoloRun({ user, onBack }: { user: any; onBack: () => void }) {
     });
     onBack();
   };
+
+  // מחוון איכות GPS: ירוק ≤10מ', כתום ≤25מ', אפור גרוע/אין
+  const accColor = acc == null ? C.sub : acc <= 10 ? C.ok : acc <= ACC_MAX_M ? '#C58A21' : C.sub;
+  const accLabel = acquiring
+    ? 'ממתין לאיתות GPS…'
+    : acc == null
+    ? 'GPS לא זמין'
+    : `דיוק GPS: ±${Math.round(acc)} מ׳`;
 
   return (
     <View style={S.wrap}>
@@ -84,6 +120,12 @@ function SoloRun({ user, onBack }: { user: any; onBack: () => void }) {
           {dist > 0 ? fmtPace(sec / dist) : '0:00'}
         </Text>
         <Text style={S.metricLbl}>{T.run.pace}</Text>
+        {running && (
+          <View style={{ flexDirection: 'row-reverse', alignItems: 'center', justifyContent: 'center', marginTop: 8 }}>
+            <View style={{ width: 9, height: 9, borderRadius: 5, backgroundColor: accColor, marginLeft: 7 }} />
+            <Text style={{ color: accColor, fontSize: 14, fontWeight: '700' }}>{accLabel}</Text>
+          </View>
+        )}
       </View>
       {!running ? (
         <Pressable style={S.btn} onPress={start}>

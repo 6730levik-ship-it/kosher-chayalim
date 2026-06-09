@@ -4,17 +4,50 @@
     "title": "3 ימים | חדר כושר מלא",
     "days": {
       "A": { "name": "חזה וכתפיים", "exercises": [
-        { "ex": "chest_press", "sets": 4, "reps": "10" },
-        { "ex": "incline_press", "sets": 3, "reps": "12" },
-        { "ex": "shoulder_press", "sets": 3, "reps": "12" }
+        { "ex": "bench_press", "sets": 4, "reps": "10" },
+        { "ex": "incline_bb", "sets": 3, "reps": "12" },
+        { "ex": "shoulder_press_machine", "sets": 3, "reps": "12" },
+        { "ex": "lateral_raise", "sets": 3, "reps": "15" }
       ]},
-      "B": { "name": "גב ויד", "exercises": [
-        { "ex": "pullup", "sets": 4, "reps": "8" },
-        { "ex": "plank", "sets": 3, "reps": "45 שניות" }
+      "B": { "name": "גב וידיים", "exercises": [
+        { "ex": "pullup_machine", "sets": 4, "reps": "10" },
+        { "ex": "seated_row_narrow", "sets": 3, "reps": "12" },
+        { "ex": "biceps_barbell", "sets": 3, "reps": "12" },
+        { "ex": "tricep_ext_cable", "sets": 3, "reps": "12" }
       ]},
       "C": { "name": "רגליים", "exercises": [
-        { "ex": "squat", "sets": 4, "reps": "12" },
-        { "ex": "lunges", "sets": 3, "reps": "10 לכל רגל" }
+        { "ex": "front_squat", "sets": 4, "reps": "10" },
+        { "ex": "leg_press", "sets": 3, "reps": "12" },
+        { "ex": "leg_curl_lying", "sets": 3, "reps": "12" },
+        { "ex": "calf_standing", "sets": 4, "reps": "15" }
+      ]}
+    }
+  },
+  "4_gym": {
+    "model": "ABCD",
+    "title": "4 ימים | חדר כושר מלא",
+    "days": {
+      "A": { "name": "חזה", "exercises": [
+        { "ex": "bench_press", "sets": 4, "reps": "10" },
+        { "ex": "incline_db", "sets": 3, "reps": "12" },
+        { "ex": "bench_db", "sets": 3, "reps": "12" }
+      ]},
+      "B": { "name": "גב", "exercises": [
+        { "ex": "pullup_machine", "sets": 4, "reps": "10" },
+        { "ex": "seated_row_narrow", "sets": 4, "reps": "12" },
+        { "ex": "cable_row_1arm", "sets": 3, "reps": "12" }
+      ]},
+      "C": { "name": "רגליים", "exercises": [
+        { "ex": "front_squat", "sets": 5, "reps": "8" },
+        { "ex": "leg_press", "sets": 3, "reps": "12" },
+        { "ex": "rdl", "sets": 3, "reps": "10" },
+        { "ex": "calf_standing", "sets": 4, "reps": "15" }
+      ]},
+      "D": { "name": "כתפיים וידיים", "exercises": [
+        { "ex": "shoulder_press_db", "sets": 4, "reps": "12" },
+        { "ex": "lateral_raise", "sets": 3, "reps": "15" },
+        { "ex": "biceps_db", "sets": 3, "reps": "12" },
+        { "ex": "skullcrusher_db", "sets": 3, "reps": "12" }
       ]}
     }
   },
@@ -30,9 +63,9 @@
         { "ex": "pullup", "sets": 4, "reps": "מקסימום" },
         { "ex": "leg_raise", "sets": 3, "reps": "12" }
       ]},
-      "C": { "name": "רגליים וליבה", "exercises": [
-        { "ex": "squat", "sets": 4, "reps": "20" },
-        { "ex": "plank", "sets": 3, "reps": "60 שניות" }
+      "C": { "name": "ליבה", "exercises": [
+        { "ex": "plank", "sets": 3, "reps": "60 שניות" },
+        { "ex": "pushup", "sets": 3, "reps": "מקסימום" }
       ]}
     }
   },
@@ -44,35 +77,13 @@
         { "ex": "pushup", "sets": 4, "reps": "15" },
         { "ex": "plank", "sets": 3, "reps": "45 שניות" }
       ]},
-      "B": { "name": "פלג גוף תחתון", "exercises": [
-        { "ex": "squat", "sets": 4, "reps": "20" },
-        { "ex": "lunges", "sets": 3, "reps": "12 לכל רגל" }
+      "B": { "name": "ליבה", "exercises": [
+        { "ex": "plank", "sets": 4, "reps": "45 שניות" },
+        { "ex": "pushup", "sets": 3, "reps": "מקסימום" }
       ]},
       "C": { "name": "גוף מלא", "exercises": [
         { "ex": "pushup", "sets": 3, "reps": "מקסימום" },
-        { "ex": "squat", "sets": 3, "reps": "מקסימום" },
         { "ex": "plank", "sets": 3, "reps": "60 שניות" }
-      ]}
-    }
-  },
-  "4_gym": {
-    "model": "ABCD",
-    "title": "4 ימים | חדר כושר מלא",
-    "days": {
-      "A": { "name": "חזה", "exercises": [
-        { "ex": "chest_press", "sets": 4, "reps": "10" },
-        { "ex": "incline_press", "sets": 4, "reps": "12" }
-      ]},
-      "B": { "name": "גב", "exercises": [
-        { "ex": "pullup", "sets": 4, "reps": "8" }
-      ]},
-      "C": { "name": "רגליים", "exercises": [
-        { "ex": "squat", "sets": 5, "reps": "10" },
-        { "ex": "lunges", "sets": 3, "reps": "12" }
-      ]},
-      "D": { "name": "כתפיים וליבה", "exercises": [
-        { "ex": "shoulder_press", "sets": 4, "reps": "12" },
-        { "ex": "plank", "sets": 4, "reps": "45 שניות" }
       ]}
     }
   }

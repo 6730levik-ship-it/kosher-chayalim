@@ -1,82 +1,688 @@
 {
-  "chest_press": {
-    "name": "לחיצת חזה",
-    "muscle": "חזה",
-    "equipment": ["gym"],
-    "lottie": "chest_press.json",
-    "rest": 90,
-    "tips": ["שמור גב צמוד לספסל", "מרפקים בזווית 45 מעלות", "נשיפה בזמן הדחיפה"]
+  "skullcrusher_ez": {
+    "name": "סקאל-קראשר מוט EZ",
+    "muscle": "יד אחורית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "skullcrusher_ez.mp4",
+    "rest": 60,
+    "tips": [
+      "שכב על הספסל, מוט מעל המצח",
+      "הורד את המוט מאחורי הראש",
+      "פשוט מרפקים בלי להזיז כתפיים"
+    ]
   },
-  "incline_press": {
-    "name": "לחיצת חזה בשיפוע",
-    "muscle": "חזה עליון",
-    "equipment": ["gym"],
-    "lottie": "incline_press.json",
+  "tricep_kickback": {
+    "name": "בעיטת טריצפס דמבל",
+    "muscle": "יד אחורית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "tricep_kickback.mp4",
+    "rest": 60,
+    "tips": [
+      "גו מקביל לרצפה, גב ישר",
+      "מרפק צמוד לגוף וקבוע",
+      "פשוט את היד אחורה עד יישור מלא"
+    ]
+  },
+  "tricep_ext_cable_1arm": {
+    "name": "פשיטת מרפק יד אחת בפולי",
+    "muscle": "יד אחורית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "tricep_ext_cable_1arm.mp4",
+    "rest": 60,
+    "tips": [
+      "מרפק צמוד לגוף",
+      "פשוט את היד עד יישור מלא",
+      "חזרה איטית בשליטה"
+    ]
+  },
+  "skullcrusher_db": {
+    "name": "סקאל-קראשר דמבלים",
+    "muscle": "יד אחורית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "skullcrusher_db.mp4",
+    "rest": 60,
+    "tips": [
+      "שכב על ספסל, דמבלים מעל המצח",
+      "הורד לצדי הראש",
+      "פשוט מרפקים בלי תנועת כתף"
+    ]
+  },
+  "tricep_ext_cable": {
+    "name": "פשיטת מרפק בפולי",
+    "muscle": "יד אחורית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "tricep_ext_cable.mp4",
+    "rest": 60,
+    "tips": [
+      "מרפקים צמודים לגוף",
+      "דחוף את הידית כלפי מטה",
+      "סחוט את הטריצפס בתחתית"
+    ]
+  },
+  "tricep_ext_db": {
+    "name": "פשיטת מרפק דמבל מעל הראש",
+    "muscle": "יד אחורית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "tricep_ext_db.mp4",
+    "rest": 60,
+    "tips": [
+      "דמבל מעל הראש בשתי ידיים",
+      "הורד מאחורי הראש בשליטה",
+      "פשוט מרפקים עד יישור"
+    ]
+  },
+  "biceps_barbell": {
+    "name": "כפיפת מרפק במוט",
+    "muscle": "יד קדמית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "biceps_barbell.mp4",
+    "rest": 60,
+    "tips": [
+      "מרפקים צמודים לגוף",
+      "הרם את המוט לחזה",
+      "הימנע מנדנוד הגב"
+    ]
+  },
+  "hammer_curl": {
+    "name": "כפיפת פטיש",
+    "muscle": "יד קדמית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "hammer_curl.mp4",
+    "rest": 60,
+    "tips": [
+      "אחיזה ניטרלית (אגודלים למעלה)",
+      "מרפקים קבועים בצד",
+      "ירידה איטית בשליטה"
+    ]
+  },
+  "preacher_1arm": {
+    "name": "כפיפת מטיף יד אחת",
+    "muscle": "יד קדמית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "preacher_1arm.mp4",
+    "rest": 60,
+    "tips": [
+      "יד נשענת על המשטח",
+      "כפוף עד סחיטה מלאה",
+      "ירידה איטית עד יישור"
+    ]
+  },
+  "biceps_db": {
+    "name": "כפיפת מרפק דמבלים",
+    "muscle": "יד קדמית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "biceps_db.mp4",
+    "rest": 60,
+    "tips": [
+      "מרפקים צמודים לגוף",
+      "סובב כף יד למעלה תוך כפיפה",
+      "הימנע מנדנוד"
+    ]
+  },
+  "biceps_cable": {
+    "name": "כפיפת מרפק בפולי",
+    "muscle": "יד קדמית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "biceps_cable.mp4",
+    "rest": 60,
+    "tips": [
+      "מתח קבוע לאורך כל התנועה",
+      "מרפקים קבועים",
+      "סחוט בשיא הכיווץ"
+    ]
+  },
+  "hammer_cable": {
+    "name": "כפיפת פטיש בפולי",
+    "muscle": "יד קדמית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "hammer_cable.mp4",
+    "rest": 60,
+    "tips": [
+      "אחיזה ניטרלית בחבל",
+      "מרפקים צמודים לגוף",
+      "ירידה מבוקרת"
+    ]
+  },
+  "preacher_curl": {
+    "name": "כפיפת מטיף",
+    "muscle": "יד קדמית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "preacher_curl.mp4",
+    "rest": 60,
+    "tips": [
+      "זרועות על משטח המטיף",
+      "כפוף עד סחיטה",
+      "אל תיישר מרפק לגמרי בתחתית"
+    ]
+  },
+  "seated_row_narrow": {
+    "name": "חתירה בישיבה אחיזה צרה",
+    "muscle": "גב",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "seated_row_narrow.mp4",
     "rest": 90,
-    "tips": ["ספסל בזווית 30 מעלות", "הורד עד קו הבריח", "שמור שורש כף יד ישר"]
+    "tips": [
+      "גב ישר וזקוף",
+      "משוך את הידית לבטן",
+      "סחוט שכמות אחורה"
+    ]
   },
   "pullup": {
     "name": "עליות מתח",
     "muscle": "גב רחב",
-    "equipment": ["calisthenics", "bodyweight"],
-    "lottie": "pullup.json",
-    "rest": 120,
-    "tips": ["אחיזה רחבה מהכתפיים", "משוך מרפקים כלפי מטה", "ירידה מבוקרת ואיטית"]
+    "equipment": [
+      "calisthenics"
+    ],
+    "clip": "pullup.mp4",
+    "rest": 90,
+    "tips": [
+      "אחיזה רחבה מהכתפיים",
+      "משוך מרפקים כלפי מטה",
+      "ירידה מבוקרת ואיטית"
+    ]
+  },
+  "pullup_machine": {
+    "name": "עליות מתח במכונה",
+    "muscle": "גב רחב",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "pullup_machine.mp4",
+    "rest": 90,
+    "tips": [
+      "אחיזה רחבה",
+      "משוך עד שהסנטר מעל המוט",
+      "ירידה איטית בשליטה"
+    ]
+  },
+  "calf_standing": {
+    "name": "כפיפת שוק בעמידה",
+    "muscle": "שוקיים",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "calf_standing.mp4",
+    "rest": 60,
+    "tips": [
+      "עלה גבוה על קצות האצבעות",
+      "סחוט בשיא",
+      "ירידה מלאה למתיחה"
+    ]
+  },
+  "calf_seated": {
+    "name": "כפיפת שוק בישיבה",
+    "muscle": "שוקיים",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "calf_seated.mp4",
+    "rest": 60,
+    "tips": [
+      "ברכיים בזווית 90 מעלות",
+      "עלה גבוה ככל האפשר",
+      "ירידה איטית ומלאה"
+    ]
+  },
+  "bench_press": {
+    "name": "לחיצת חזה",
+    "muscle": "חזה",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "bench_press.mp4",
+    "rest": 90,
+    "tips": [
+      "שמור גב צמוד לספסל",
+      "מרפקים בזווית 45 מעלות",
+      "נשיפה בזמן הדחיפה"
+    ]
   },
   "dips": {
     "name": "מקבילים",
     "muscle": "חזה ויד אחורית",
-    "equipment": ["calisthenics", "bodyweight"],
-    "lottie": "dips.json",
+    "equipment": [
+      "calisthenics"
+    ],
+    "clip": "dips.mp4",
+    "rest": 60,
+    "tips": [
+      "הטה גוף קדימה לחזה",
+      "מרפקים צמודים לגוף",
+      "ירידה עד 90 מעלות"
+    ]
+  },
+  "bench_db": {
+    "name": "לחיצת חזה דמבלים",
+    "muscle": "חזה",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "bench_db.mp4",
     "rest": 90,
-    "tips": ["הטה גוף קדימה לחזה", "מרפקים צמודים לגוף", "ירידה עד 90 מעלות"]
+    "tips": [
+      "הורד דמבלים לצדי החזה",
+      "דחוף למעלה ופנימה",
+      "שמור שורש כף יד ישר"
+    ]
+  },
+  "incline_bb": {
+    "name": "לחיצת חזה בשיפוע - מוט",
+    "muscle": "חזה עליון",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "incline_bb.mp4",
+    "rest": 90,
+    "tips": [
+      "ספסל בזווית 30 מעלות",
+      "הורד עד קו הבריח",
+      "דחוף בקו ישר למעלה"
+    ]
+  },
+  "incline_db": {
+    "name": "לחיצת חזה בשיפוע - דמבלים",
+    "muscle": "חזה עליון",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "incline_db.mp4",
+    "rest": 90,
+    "tips": [
+      "ספסל בזווית 30 מעלות",
+      "הורד לצדי החזה העליון",
+      "דחוף למעלה ופנימה"
+    ]
+  },
+  "lunge_bb_stand": {
+    "name": "לאנג' עם מוט בעמידה",
+    "muscle": "רגליים",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "lunge_bb_stand.mp4",
+    "rest": 90,
+    "tips": [
+      "צעד גדול קדימה",
+      "ברך אחורית כמעט נוגעת ברצפה",
+      "שמור גו זקוף"
+    ]
+  },
+  "lunge_bb_walk": {
+    "name": "לאנג' הליכה עם מוט",
+    "muscle": "רגליים",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "lunge_bb_walk.mp4",
+    "rest": 90,
+    "tips": [
+      "צעד והחלף רגליים בהליכה",
+      "ברך קדמית מעל הקרסול",
+      "שמור שיווי משקל וגו זקוף"
+    ]
+  },
+  "lunge_db_walk": {
+    "name": "לאנג' הליכה עם דמבלים",
+    "muscle": "רגליים",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "lunge_db_walk.mp4",
+    "rest": 90,
+    "tips": [
+      "דמבלים בצדי הגוף",
+      "צעד גדול קדימה לסירוגין",
+      "גו זקוף לאורך התנועה"
+    ]
+  },
+  "front_squat": {
+    "name": "סקוואט קדמי",
+    "muscle": "רגליים",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "front_squat.mp4",
+    "rest": 90,
+    "tips": [
+      "מוט על קדמת הכתפיים",
+      "מרפקים גבוהים",
+      "ירידה עד מקביל לרצפה"
+    ]
+  },
+  "leg_curl_lying": {
+    "name": "כפיפת ברך בשכיבה",
+    "muscle": "ירך אחורית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "leg_curl_lying.mp4",
+    "rest": 90,
+    "tips": [
+      "שכב עם בטן על המכונה",
+      "כופף עקבים לישבן",
+      "ירידה איטית בשליטה"
+    ]
+  },
+  "squat_smith": {
+    "name": "סקוואט בסמית' מאשין",
+    "muscle": "רגליים",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "squat_smith.mp4",
+    "rest": 90,
+    "tips": [
+      "כפות רגליים מעט קדימה",
+      "ירידה עד מקביל",
+      "דחיפה דרך העקבים"
+    ]
+  },
+  "rdl": {
+    "name": "דדליפט רומני",
+    "muscle": "ירך אחורית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "rdl.mp4",
+    "rest": 90,
+    "tips": [
+      "ברכיים מעט כפופות וקבועות",
+      "דחוף ירכיים אחורה",
+      "גב ישר לאורך התנועה"
+    ]
+  },
+  "leg_curl_standing": {
+    "name": "כפיפת ברך בעמידה",
+    "muscle": "ירך אחורית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "leg_curl_standing.mp4",
+    "rest": 90,
+    "tips": [
+      "רגל אחת בכל פעם",
+      "כופף עקב לכיוון הישבן",
+      "שמור אגן יציב"
+    ]
+  },
+  "leg_press_wide": {
+    "name": "לג-פרס אחיזה רחבה",
+    "muscle": "רגליים",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "leg_press_wide.mp4",
+    "rest": 90,
+    "tips": [
+      "כפות רגליים רחבות על המשטח",
+      "ירידה עד 90 מעלות",
+      "אל תנעל ברכיים בקצה"
+    ]
+  },
+  "lunge_db_stand": {
+    "name": "לאנג' עם דמבלים בעמידה",
+    "muscle": "רגליים",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "lunge_db_stand.mp4",
+    "rest": 90,
+    "tips": [
+      "דמבלים בצדי הגוף",
+      "צעד קדימה וירידה",
+      "דחיפה חזרה דרך העקב"
+    ]
+  },
+  "leg_press": {
+    "name": "לג-פרס",
+    "muscle": "רגליים",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "leg_press.mp4",
+    "rest": 90,
+    "tips": [
+      "כפות רגליים ברוחב כתפיים",
+      "ירידה עד 90 מעלות",
+      "דחיפה דרך העקבים"
+    ]
+  },
+  "hip_adduction": {
+    "name": "קירוב ירכיים במכונה",
+    "muscle": "פנים הירך",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "hip_adduction.mp4",
+    "rest": 90,
+    "tips": [
+      "ישיבה זקופה במכונה",
+      "קרב ברכיים בשליטה",
+      "פתיחה איטית למתיחה"
+    ]
+  },
+  "leg_curl_seated": {
+    "name": "כפיפת ברך בישיבה",
+    "muscle": "ירך אחורית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "leg_curl_seated.mp4",
+    "rest": 90,
+    "tips": [
+      "כרית על הירכיים",
+      "כופף ברכיים עד הסוף",
+      "חזרה איטית בשליטה"
+    ]
+  },
+  "leg_press_hack": {
+    "name": "לג-פרס הקנשמידט",
+    "muscle": "רגליים",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "leg_press_hack.mp4",
+    "rest": 90,
+    "tips": [
+      "גב צמוד למשטח",
+      "ירידה עמוקה בשליטה",
+      "דחיפה דרך העקבים"
+    ]
+  },
+  "hip_thrust": {
+    "name": "היפ-ת'רסט",
+    "muscle": "ישבן",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "hip_thrust.mp4",
+    "rest": 90,
+    "tips": [
+      "גב עליון על הספסל",
+      "דחוף אגן למעלה וסחוט ישבן",
+      "סנטר אסוף לאורך התנועה"
+    ]
+  },
+  "rear_delt_raise": {
+    "name": "הרחקת כתף אחורית בהטיה",
+    "muscle": "כתף אחורית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "rear_delt_raise.mp4",
+    "rest": 60,
+    "tips": [
+      "גו מוטה קדימה, גב ישר",
+      "הרם דמבלים לצדדים",
+      "סחוט שכמות בשיא"
+    ]
+  },
+  "facepull": {
+    "name": "פייס-פול",
+    "muscle": "כתף אחורית",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "facepull.mp4",
+    "rest": 60,
+    "tips": [
+      "משוך את החבל לכיוון הפנים",
+      "מרפקים גבוהים",
+      "סחוט שכמות אחורה"
+    ]
+  },
+  "shoulder_press_machine": {
+    "name": "לחיצת כתפיים במכונה",
+    "muscle": "כתפיים",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "shoulder_press_machine.mp4",
+    "rest": 90,
+    "tips": [
+      "גב צמוד למשענת",
+      "דחוף מעל הראש",
+      "אל תנעל מרפקים בקצה"
+    ]
+  },
+  "shrug": {
+    "name": "משיכת כתפיים",
+    "muscle": "טרפז",
+    "equipment": [
+      "bodyweight"
+    ],
+    "clip": "shrug.mp4",
+    "rest": 60,
+    "tips": [
+      "הרם כתפיים ישר למעלה",
+      "סחוט בשיא לרגע",
+      "ירידה איטית בשליטה"
+    ]
+  },
+  "cable_row_1arm": {
+    "name": "חתירה בפולי יד אחת",
+    "muscle": "גב",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "cable_row_1arm.mp4",
+    "rest": 90,
+    "tips": [
+      "גב ישר ויציב",
+      "משוך מרפק אחורה לאורך הגוף",
+      "סחוט שכמה בשיא"
+    ]
+  },
+  "shrug_smith": {
+    "name": "משיכת כתפיים בסמית'",
+    "muscle": "טרפז",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "shrug_smith.mp4",
+    "rest": 60,
+    "tips": [
+      "מוט מול הירכיים",
+      "הרם כתפיים ישר למעלה",
+      "הימנע מסיבוב כתפיים"
+    ]
+  },
+  "lateral_raise": {
+    "name": "הרחקת כתפיים",
+    "muscle": "כתפיים",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "lateral_raise.mp4",
+    "rest": 90,
+    "tips": [
+      "הרם דמבלים לצדדים עד גובה הכתף",
+      "מרפקים מעט כפופים",
+      "ירידה איטית בשליטה"
+    ]
+  },
+  "shoulder_press_db": {
+    "name": "לחיצת כתפיים דמבלים",
+    "muscle": "כתפיים",
+    "equipment": [
+      "gym"
+    ],
+    "clip": "shoulder_press_db.mp4",
+    "rest": 90,
+    "tips": [
+      "שב זקוף עם תמיכת גב",
+      "דחוף דמבלים מעל הראש",
+      "הורד עד גובה האוזניים"
+    ]
   },
   "pushup": {
     "name": "שכיבות סמיכה",
     "muscle": "חזה",
-    "equipment": ["bodyweight"],
-    "lottie": "pushup.json",
+    "equipment": [
+      "bodyweight"
+    ],
+    "image": "pushup.png",
     "rest": 60,
-    "tips": ["גוף ישר כמו קרש", "מרפקים אחורה לא לצדדים", "חזה כמעט נוגע ברצפה"]
-  },
-  "squat": {
-    "name": "סקוואט",
-    "muscle": "רגליים וישבן",
-    "equipment": ["gym", "bodyweight"],
-    "lottie": "squat.json",
-    "rest": 120,
-    "tips": ["גב ישר לאורך כל התנועה", "ברכיים בכיוון האצבעות", "ירידה עד מקביל לרצפה"]
-  },
-  "lunges": {
-    "name": "מספריים",
-    "muscle": "רגליים",
-    "equipment": ["bodyweight", "gym"],
-    "lottie": "lunges.json",
-    "rest": 75,
-    "tips": ["צעד גדול קדימה", "ברך אחורית כמעט נוגעת ברצפה", "שמור גו זקוף"]
-  },
-  "shoulder_press": {
-    "name": "לחיצת כתפיים",
-    "muscle": "כתפיים",
-    "equipment": ["gym"],
-    "lottie": "shoulder_press.json",
-    "rest": 90,
-    "tips": ["שמור ליבה אסופה", "אל תנעל מרפקים בקצה", "הורד עד גובה האוזניים"]
+    "tips": [
+      "גוף ישר כמו קרש",
+      "מרפקים אחורה לא לצדדים",
+      "חזה כמעט נוגע ברצפה"
+    ]
   },
   "plank": {
     "name": "פלאנק",
     "muscle": "בטן וליבה",
-    "equipment": ["bodyweight", "calisthenics", "gym"],
-    "lottie": "plank.json",
-    "rest": 45,
-    "tips": ["גוף בקו ישר", "כווץ בטן וישבן", "מבט לרצפה לצוואר ניטרלי"]
+    "equipment": [
+      "bodyweight"
+    ],
+    "image": "plank.png",
+    "rest": 60,
+    "tips": [
+      "גוף בקו ישר",
+      "כווץ בטן וישבן",
+      "מבט לרצפה לצוואר ניטרלי"
+    ]
   },
   "leg_raise": {
-    "name": "הרמות רגליים בתלייה",
+    "name": "הרמות רגליים לבטן",
     "muscle": "בטן תחתונה",
-    "equipment": ["calisthenics"],
-    "lottie": "leg_raise.json",
+    "equipment": [
+      "calisthenics"
+    ],
+    "image": "leg_raise.png",
     "rest": 60,
-    "tips": ["הימנע מנדנוד", "הרם עד 90 מעלות", "ירידה איטית בשליטה"]
+    "tips": [
+      "הימנע מנדנוד",
+      "הרם עד 90 מעלות",
+      "ירידה איטית בשליטה"
+    ]
   }
 }

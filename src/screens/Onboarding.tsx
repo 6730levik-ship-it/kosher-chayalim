@@ -6,7 +6,7 @@ import { S, C } from '../theme';
 import { T } from '../i18n/he';
 
 // כניסה אוטומטית בלחיצה אחת — Google / Apple נייטיבי, החשבון הקיים במכשיר קופץ.
-export default function Onboarding() {
+export default function Onboarding({ onGuest }: { onGuest?: () => void }) {
   const [busy, setBusy] = useState<null | 'google' | 'apple'>(null);
 
   const run = async (which: 'google' | 'apple', fn: () => Promise<boolean>) => {
@@ -57,6 +57,12 @@ export default function Onboarding() {
           )
         )}
       </View>
+
+      {onGuest && (
+        <Pressable style={[S.btnGhost, { width: '100%' }]} onPress={onGuest}>
+          <Text style={S.btnTxtDark}>👀 כניסת אורח (תצוגה)</Text>
+        </Pressable>
+      )}
 
       <Text style={[S.sub, { textAlign: 'center', marginTop: 24, fontSize: 12 }]}>
         ההתחברות שומרת את הנתונים שלך בענן

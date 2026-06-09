@@ -12,12 +12,16 @@ const extra = (Constants.expoConfig?.extra ?? {}) as {
   googleIosClientId?: string;
 };
 
-// קונפיגורציה חד-פעמית של Google Sign-In
-GoogleSignin.configure({
-  webClientId: extra.googleWebClientId, // חובה — ה-audience של ה-idToken עבור Supabase
-  iosClientId: extra.googleIosClientId,
-  scopes: ['profile', 'email'],
-});
+// קונפיגורציה חד-פעמית של Google Sign-In (נייטיב בלבד — לא רץ ב-web)
+if (Platform.OS !== 'web') {
+  try {
+    GoogleSignin.configure({
+      webClientId: extra.googleWebClientId, // ה-audience של ה-idToken עבור Supabase
+      iosClientId: extra.googleIosClientId,
+      scopes: ['profile', 'email'],
+    });
+  } catch {}
+}
 
 /**
  * התחברות Google נייטיבית — מקפיץ את חשבון המכשיר הקיים,
